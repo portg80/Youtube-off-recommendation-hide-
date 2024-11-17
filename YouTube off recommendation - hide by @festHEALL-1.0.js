@@ -107,7 +107,7 @@ function applyStoredVisibilityMainPage() {
     const isHidden = storedStateMain === 'hidden';
 
     if (storedStateMain === 'hidden') {
-        showFocusText(0);
+        //showFocusText(0);
         toggleVisibility(chipsWrapper, 'hidden');
         contentsBlocks.forEach(block => {
             toggleVisibility(block, 'hidden');
@@ -115,7 +115,7 @@ function applyStoredVisibilityMainPage() {
             setStyleWithImportant(block, 'height', '0px');
         });
     } else {
-        showFocusText(1);
+        //showFocusText(1);
         toggleVisibility(chipsWrapper, 'visible');
         contentsBlocks.forEach(block => {
             toggleVisibility(block, 'visible');
@@ -141,7 +141,7 @@ function applyStoredVisibilityMainPage() {
         };
 
         // Для страницы видео
-        const secondaryBlock = document.querySelector('ytd-watch-flexy #secondary #secondary-inner');
+        const secondaryBlock = document.querySelector('ytd-watch-flexy #secondary #related');
         const storedStateSecondary = localStorage.getItem(STORAGE_KEY_SECONDARY);
 
         if (storedStateSecondary === 'hidden') {
@@ -156,7 +156,7 @@ function applyStoredVisibilityMainPage() {
         if (document.getElementById('toggle-secondary-button')) return;
 
         const secondaryBlock = document.querySelector('ytd-watch-flexy #secondary');
-        const innerBlock = secondaryBlock?.querySelector('#secondary-inner');
+        const innerBlock = secondaryBlock?.querySelector('#related');
         if (!secondaryBlock || !innerBlock) return;
 
         // Создаем кнопку
@@ -205,12 +205,12 @@ function addButtonMainPage() {
         // Обрабатываем высоту для элементов на странице
         contentsBlocks.forEach(block => {
             if (isHidden) {
-                showFocusText(1);
+                //showFocusText(1);
                 setStyleWithImportant(block, 'visibility', 'visible');
                  // Убираем ограничение по высоте
                 setStyleWithImportant(block, 'height', 'auto');
             } else {
-                showFocusText(0);
+                //showFocusText(0);
                 setStyleWithImportant(block, 'visibility', 'hidden');
                 // Ограничиваем высоту до 0
                 setStyleWithImportant(block, 'height', '0px');
@@ -221,10 +221,10 @@ function addButtonMainPage() {
         shortsElements.forEach(element => {
             if (isHidden) {
                 setStyleWithImportant(element, 'visibility', 'visible');
-                showFocusText(1);
+                //showFocusText(1);
             } else {
                 setStyleWithImportant(element, 'visibility', 'hidden');
-                showFocusText(0);
+                //showFocusText(0);
             }
         });
 
